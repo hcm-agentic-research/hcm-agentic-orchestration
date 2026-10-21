@@ -22,7 +22,8 @@ SCOPES = {
 
 
 def digest(rel: str) -> str:
-    return hashlib.sha256((HERE / rel).read_bytes()).hexdigest()
+    # Line endings are normalised (CRLF -> LF) so a checkout on any operating system verifies the same.
+    return hashlib.sha256((HERE / rel).read_bytes().replace(b"\r\n", b"\n")).hexdigest()
 
 
 def main(action: str, scope: str) -> int:

@@ -1,0 +1,1108 @@
+{
+ "record": {
+  "strategy": "multi_agent",
+  "model": "openai:gpt-5.5-2026-04-23:medium",
+  "scenario": "ON-10",
+  "split": "novel",
+  "cascade": "onboarding",
+  "seed": 1,
+  "repeat": 0,
+  "success": true,
+  "violations": [],
+  "unsafe": [],
+  "failed_expectations": [],
+  "human_touches": 0,
+  "effort": {
+   "escalations": 0,
+   "fix_requests": 0,
+   "fix_requests_declined": 0,
+   "human_touches": 0
+  },
+  "tool_calls": 79,
+  "failed_tool_calls": 3,
+  "blocked_by_gate": 0,
+  "access_interruptions": 0,
+  "termination_exposure_hours": [],
+  "minutes_to_finish": 125,
+  "wall_seconds": 203.5,
+  "usage": {
+   "calls": 40,
+   "input_tokens": 58373,
+   "output_tokens": 14358,
+   "cache_read_tokens": 111104,
+   "cache_write_tokens": 0,
+   "refusals": 0,
+   "fallbacks": 0
+  },
+  "cost_usd": 0.7782,
+  "llm_runs": {
+   "investigator": 1,
+   "planner": 1,
+   "critic": 1,
+   "executor_workday": 3,
+   "executor_identity": 1,
+   "executor_finance": 1,
+   "executor_itsm": 1,
+   "reconciler": 1
+  },
+  "step_limits": 0,
+  "notes": [],
+  "error": null
+ },
+ "audit": [
+  {
+   "tick": 1,
+   "actor": "coordinator",
+   "tool": "wd_get_events",
+   "tier": "T0",
+   "args": {
+    "since_seq": 0
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 2,
+   "actor": "investigator",
+   "tool": "sys_get_time",
+   "tier": "T0",
+   "args": {},
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 3,
+   "actor": "investigator",
+   "tool": "org_get_policy",
+   "tier": "T0",
+   "args": {},
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 4,
+   "actor": "investigator",
+   "tool": "wd_get_worker",
+   "tier": "T0",
+   "args": {
+    "worker": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 5,
+   "actor": "investigator",
+   "tool": "wd_get_onboarding_tasks",
+   "tier": "T0",
+   "args": {
+    "worker": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 6,
+   "actor": "investigator",
+   "tool": "legal_get_holds",
+   "tier": "T0",
+   "args": {
+    "worker_wid": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 7,
+   "actor": "investigator",
+   "tool": "fin_get_profile",
+   "tier": "T0",
+   "args": {
+    "worker_wid": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": false,
+   "fault": null,
+   "error": "No finance profile for worker d1c51f86973082d609b4e5d2d9bc1d97"
+  },
+  {
+   "tick": 8,
+   "actor": "investigator",
+   "tool": "fin_get_expense_reports",
+   "tier": "T0",
+   "args": {
+    "worker_wid": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 9,
+   "actor": "investigator",
+   "tool": "itsm_get_tickets",
+   "tier": "T0",
+   "args": {
+    "worker_wid": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 10,
+   "actor": "investigator",
+   "tool": "idm_search_accounts",
+   "tier": "T0",
+   "args": {
+    "query": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 11,
+   "actor": "investigator",
+   "tool": "idm_get_birthright",
+   "tier": "T0",
+   "args": {
+    "job_profile": "Software Engineer"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 12,
+   "actor": "investigator",
+   "tool": "fin_map_cost_center",
+   "tier": "T0",
+   "args": {
+    "workday_cost_center_wid": "1e2feb89414c343c1027c4d1c386bbc4"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 13,
+   "actor": "investigator",
+   "tool": "wd_search_workers",
+   "tier": "T0",
+   "args": {
+    "name": "Nadia Rahman"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 14,
+   "actor": "investigator",
+   "tool": "idm_search_accounts",
+   "tier": "T0",
+   "args": {
+    "query": "Nadia Rahman"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 15,
+   "actor": "investigator",
+   "tool": "wd_get_worker",
+   "tier": "T0",
+   "args": {
+    "worker": "afbd67f9619699cfe1988ad9f06c144a"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 16,
+   "actor": "investigator",
+   "tool": "fin_get_profile",
+   "tier": "T0",
+   "args": {
+    "worker_wid": "afbd67f9619699cfe1988ad9f06c144a"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 17,
+   "actor": "investigator",
+   "tool": "idm_search_accounts",
+   "tier": "T0",
+   "args": {
+    "query": "Avery Carter"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 18,
+   "actor": "investigator",
+   "tool": "fin_get_approval_delegations",
+   "tier": "T0",
+   "args": {
+    "approver_worker_wid": "afbd67f9619699cfe1988ad9f06c144a"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 19,
+   "actor": "investigator",
+   "tool": "idm_check_upn",
+   "tier": "T0",
+   "args": {
+    "upn": "nadia.rahman@example.com"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 20,
+   "actor": "investigator",
+   "tool": "idm_check_sod",
+   "tier": "T0",
+   "args": {
+    "groups": [
+     "All-Staff",
+     "VPN-Users",
+     "Eng-Git"
+    ]
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 21,
+   "actor": "investigator",
+   "tool": "wd_get_events",
+   "tier": "T0",
+   "args": {
+    "since_seq": 0
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 22,
+   "actor": "investigator",
+   "tool": "idm_get_account",
+   "tier": "T0",
+   "args": {
+    "account_id": "acct-37730edf"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 23,
+   "actor": "critic",
+   "tool": "sys_get_time",
+   "tier": "T0",
+   "args": {},
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 24,
+   "actor": "critic",
+   "tool": "wd_get_worker",
+   "tier": "T0",
+   "args": {
+    "worker": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 25,
+   "actor": "critic",
+   "tool": "wd_get_events",
+   "tier": "T0",
+   "args": {
+    "since_seq": 3
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 26,
+   "actor": "critic",
+   "tool": "wd_get_onboarding_tasks",
+   "tier": "T0",
+   "args": {
+    "worker": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 27,
+   "actor": "executor_workday",
+   "tool": "wd_get_worker",
+   "tier": "T0",
+   "args": {
+    "worker": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 28,
+   "actor": "executor_workday",
+   "tool": "wd_get_onboarding_tasks",
+   "tier": "T0",
+   "args": {
+    "worker": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 29,
+   "actor": "executor_identity",
+   "tool": "sys_get_time",
+   "tier": "T0",
+   "args": {},
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 30,
+   "actor": "executor_identity",
+   "tool": "idm_search_accounts",
+   "tier": "T0",
+   "args": {
+    "query": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 31,
+   "actor": "executor_identity",
+   "tool": "idm_search_accounts",
+   "tier": "T0",
+   "args": {
+    "query": "Nadia Rahman"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 32,
+   "actor": "executor_identity",
+   "tool": "idm_check_upn",
+   "tier": "T0",
+   "args": {
+    "upn": "nadia.rahman@example.com"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 33,
+   "actor": "executor_identity",
+   "tool": "idm_get_birthright",
+   "tier": "T0",
+   "args": {
+    "job_profile": "Software Engineer"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 34,
+   "actor": "executor_identity",
+   "tool": "idm_check_sod",
+   "tier": "T0",
+   "args": {
+    "groups": [
+     "All-Staff",
+     "VPN-Users",
+     "Eng-Git"
+    ]
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 35,
+   "actor": "executor_identity",
+   "tool": "idm_create_account",
+   "tier": "T1",
+   "args": {
+    "worker_wid": "d1c51f86973082d609b4e5d2d9bc1d97",
+    "upn": "nadia.rahman@example.com",
+    "display_name": "Nadia Rahman",
+    "idempotency_key": "hire:case-deb0e066:d1c51f86973082d609b4e5d2d9bc1d97:create-account",
+    "employee_type": "Employee",
+    "enabled": true
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 36,
+   "actor": "executor_identity",
+   "tool": "idm_provision_mailbox",
+   "tier": "T1",
+   "args": {
+    "account_id": "acct-f9495568"
+   },
+   "ok": false,
+   "fault": null,
+   "error": "Account already has an active user mailbox"
+  },
+  {
+   "tick": 37,
+   "actor": "executor_identity",
+   "tool": "idm_add_group",
+   "tier": "T1",
+   "args": {
+    "account_id": "acct-f9495568",
+    "group": "All-Staff"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 38,
+   "actor": "executor_identity",
+   "tool": "idm_add_group",
+   "tier": "T1",
+   "args": {
+    "account_id": "acct-f9495568",
+    "group": "VPN-Users"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 39,
+   "actor": "executor_identity",
+   "tool": "idm_add_group",
+   "tier": "T1",
+   "args": {
+    "account_id": "acct-f9495568",
+    "group": "Eng-Git"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 40,
+   "actor": "executor_identity",
+   "tool": "idm_get_account",
+   "tier": "T0",
+   "args": {
+    "account_id": "acct-f9495568"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 41,
+   "actor": "executor_workday",
+   "tool": "wd_get_worker",
+   "tier": "T0",
+   "args": {
+    "worker": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 42,
+   "actor": "executor_workday",
+   "tool": "wd_update_work_email",
+   "tier": "T1",
+   "args": {
+    "worker": "d1c51f86973082d609b4e5d2d9bc1d97",
+    "email": "nadia.rahman@example.com",
+    "idempotency_key": "hire:case-deb0e066:d1c51f86973082d609b4e5d2d9bc1d97:update-work-email",
+    "correlation_id": "case-deb0e066"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 43,
+   "actor": "executor_workday",
+   "tool": "wd_get_business_process",
+   "tier": "T0",
+   "args": {
+    "event_id": "82458cc89f7a7dafb43adc4fc7af3626"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 45,
+   "actor": "executor_workday",
+   "tool": "sys_wait",
+   "tier": "T0",
+   "args": {
+    "minutes": 1
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 46,
+   "actor": "executor_workday",
+   "tool": "wd_get_business_process",
+   "tier": "T0",
+   "args": {
+    "event_id": "82458cc89f7a7dafb43adc4fc7af3626"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 47,
+   "actor": "executor_workday",
+   "tool": "wd_get_worker",
+   "tier": "T0",
+   "args": {
+    "worker": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 48,
+   "actor": "executor_workday",
+   "tool": "wd_get_onboarding_tasks",
+   "tier": "T0",
+   "args": {
+    "worker": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 49,
+   "actor": "executor_workday",
+   "tool": "wd_update_onboarding_task",
+   "tier": "T1",
+   "args": {
+    "task_wid": "91fde85ce69bae29f652d00837b4000b",
+    "status": "Complete"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 50,
+   "actor": "executor_workday",
+   "tool": "wd_get_onboarding_tasks",
+   "tier": "T0",
+   "args": {
+    "worker": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 51,
+   "actor": "executor_finance",
+   "tool": "fin_map_cost_center",
+   "tier": "T0",
+   "args": {
+    "workday_cost_center_wid": "1e2feb89414c343c1027c4d1c386bbc4"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 52,
+   "actor": "executor_finance",
+   "tool": "fin_get_profile",
+   "tier": "T0",
+   "args": {
+    "worker_wid": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": false,
+   "fault": null,
+   "error": "No finance profile for worker d1c51f86973082d609b4e5d2d9bc1d97"
+  },
+  {
+   "tick": 53,
+   "actor": "executor_finance",
+   "tool": "fin_create_profile",
+   "tier": "T1",
+   "args": {
+    "worker_wid": "d1c51f86973082d609b4e5d2d9bc1d97",
+    "cost_center_code": "CC-1000",
+    "approver_worker_wid": "afbd67f9619699cfe1988ad9f06c144a",
+    "idempotency_key": "hire:case-deb0e066:d1c51f86973082d609b4e5d2d9bc1d97:create-finance-profile"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 54,
+   "actor": "executor_finance",
+   "tool": "fin_get_profile",
+   "tier": "T0",
+   "args": {
+    "worker_wid": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 55,
+   "actor": "executor_itsm",
+   "tool": "itsm_get_tickets",
+   "tier": "T0",
+   "args": {
+    "worker_wid": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 56,
+   "actor": "executor_itsm",
+   "tool": "itsm_order_equipment",
+   "tier": "T1",
+   "args": {
+    "worker_wid": "d1c51f86973082d609b4e5d2d9bc1d97",
+    "bundle": "standard",
+    "idempotency_key": "hire:case-deb0e066:d1c51f86973082d609b4e5d2d9bc1d97:order-equipment"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 57,
+   "actor": "executor_itsm",
+   "tool": "itsm_get_tickets",
+   "tier": "T0",
+   "args": {
+    "worker_wid": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 58,
+   "actor": "executor_workday",
+   "tool": "wd_update_onboarding_task",
+   "tier": "T1",
+   "args": {
+    "task_wid": "de26e655d3f21dcc2be88b4675fa6dd8",
+    "status": "Complete"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 59,
+   "actor": "executor_workday",
+   "tool": "wd_get_onboarding_tasks",
+   "tier": "T0",
+   "args": {
+    "worker": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 60,
+   "actor": "executor_workday",
+   "tool": "wd_get_worker",
+   "tier": "T0",
+   "args": {
+    "worker": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 61,
+   "actor": "executor_workday",
+   "tool": "wd_get_events",
+   "tier": "T0",
+   "args": {
+    "since_seq": 3
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 62,
+   "actor": "reconciler",
+   "tool": "wd_get_worker",
+   "tier": "T0",
+   "args": {
+    "worker": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 63,
+   "actor": "reconciler",
+   "tool": "wd_get_onboarding_tasks",
+   "tier": "T0",
+   "args": {
+    "worker": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 64,
+   "actor": "reconciler",
+   "tool": "idm_search_accounts",
+   "tier": "T0",
+   "args": {
+    "query": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 65,
+   "actor": "reconciler",
+   "tool": "fin_get_profile",
+   "tier": "T0",
+   "args": {
+    "worker_wid": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 66,
+   "actor": "reconciler",
+   "tool": "fin_get_expense_reports",
+   "tier": "T0",
+   "args": {
+    "worker_wid": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 67,
+   "actor": "reconciler",
+   "tool": "itsm_get_tickets",
+   "tier": "T0",
+   "args": {
+    "worker_wid": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 68,
+   "actor": "reconciler",
+   "tool": "legal_get_holds",
+   "tier": "T0",
+   "args": {
+    "worker_wid": "d1c51f86973082d609b4e5d2d9bc1d97"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 69,
+   "actor": "reconciler",
+   "tool": "wd_get_events",
+   "tier": "T0",
+   "args": {
+    "since_seq": 3
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 70,
+   "actor": "reconciler",
+   "tool": "idm_get_account",
+   "tier": "T0",
+   "args": {
+    "account_id": "acct-f9495568"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 71,
+   "actor": "reconciler",
+   "tool": "idm_get_birthright",
+   "tier": "T0",
+   "args": {
+    "job_profile": "Software Engineer"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 72,
+   "actor": "reconciler",
+   "tool": "fin_map_cost_center",
+   "tier": "T0",
+   "args": {
+    "workday_cost_center_wid": "1e2feb89414c343c1027c4d1c386bbc4"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 73,
+   "actor": "reconciler",
+   "tool": "wd_get_business_process",
+   "tier": "T0",
+   "args": {
+    "event_id": "82458cc89f7a7dafb43adc4fc7af3626"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 74,
+   "actor": "reconciler",
+   "tool": "idm_check_sod",
+   "tier": "T0",
+   "args": {
+    "groups": [
+     "All-Staff",
+     "Eng-Git",
+     "VPN-Users"
+    ]
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 75,
+   "actor": "coordinator",
+   "tool": "wd_get_events",
+   "tier": "T0",
+   "args": {
+    "since_seq": 3
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 91,
+   "actor": "coordinator",
+   "tool": "sys_wait",
+   "tier": "T0",
+   "args": {
+    "minutes": 15
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 92,
+   "actor": "coordinator",
+   "tool": "wd_get_events",
+   "tier": "T0",
+   "args": {
+    "since_seq": 4
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 108,
+   "actor": "coordinator",
+   "tool": "sys_wait",
+   "tier": "T0",
+   "args": {
+    "minutes": 15
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 109,
+   "actor": "coordinator",
+   "tool": "wd_get_events",
+   "tier": "T0",
+   "args": {
+    "since_seq": 4
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 125,
+   "actor": "coordinator",
+   "tool": "sys_wait",
+   "tier": "T0",
+   "args": {
+    "minutes": 15
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  }
+ ],
+ "escalations": [],
+ "fix_requests": [],
+ "agents": [
+  {
+   "role": "investigator",
+   "tick": 22,
+   "stop": "end",
+   "tool_calls": 21,
+   "blocked": 0,
+   "final_text": "Investigation report for events seq 1\u20133 / correlation_id `case-deb0e066`.\n\n## Event relationship\n\n- The event feed currently contains exactly the three provided events:\n  - Seq `1`: `HIRE`, worker `d1c51f86973082d609b4e5d2d9bc1d97`, effective `2026-11-02`\n  - Seq `2`: `HIRE`, worker `d1c51f86973082d609b4e5d2d9bc1d97`, effective `2026-11-02`\n  - Seq `3`: `HIRE`, worker `d1c51f86973082d609b4e5d2d9bc1d97`, effective `2026-11-02`\n- All three have the same worker, type, correlation_id, and effective date. They appear to be duplicate events for the same hire.\n- Current business time is `2026-11-02 00:02`; the hire effective date is today.\n\n## Organization policy\n\nPolicy values:\n\n- `rehire_employee_id`: `reuse`\n- `rehire_identity`: `reuse_prior_account`\n- `contractor_conversion_identity`: `carry_over`\n- `transfer_access_overlap_days`: `0`\n- `rehire_restore_prior_access`: `false`\n\n## Worker record: Nadia Rahman\n\nWorkday worker:\n\n- Worker WID: `d1c51f86973082d609b4e5d2d9bc1d97`\n- Employee ID: `E1023`\n- Name: `Nadia Rahman`\n- Status: `Active`\n- Worker type: `Employee`\n- Job profile: `Software Engineer`\n- Supervisory org:\n  - WID: `cd613e30d8f16adf91b7584a2265b1f5`\n  - Name: `Engineering`\n- Cost center:\n  - Workday WID: `1e2feb89414c343c1027c4d1c386bbc4`\n  - Name: `CC-1000 Engineering`\n  - Finance cost center code: `CC-1000`\n- Manager:\n  - Worker WID: `afbd67f9619699cfe1988ad9f06c144a`\n  - Employee ID: `E1001`\n  - Name: `Avery Carter`\n- Location: `Austin, TX`\n- Legal entity: `Example Corp US`\n- Hire date: `2026-11-02`\n- Termination date: `null`\n- Work email: `null`\n- Rehire of employee ID: `null`\n- Converted from contingent ID: `null`\n- Gov ID token: `gid-08f8ed40f698`\n- Notes: empty\n\n## Related / earlier worker records\n\nSearch by name `Nadia Rahman` returned only one worker record:\n\n- Worker WID: `d1c51f86973082d609b4e5d2d9bc1d97`\n- Employee ID: `E1023`\n- Status: `Active`\n- Job profile: `Software Engineer`\n- Work email: `null`\n- Gov ID token: `gid-08f8ed40f698`\n\nNo earlier or separate Workday worker record was found by name search. The current record itself also has:\n\n- `rehire_of_employee_id`: `null`\n- `converted_from_contingent_id`: `null`\n\n## Identity\n\nSearches for identity accounts returned:\n\n- By worker WID `d1c51f86973082d609b4e5d2d9bc1d97`: no accounts found.\n- By name `Nadia Rahman`: no accounts found.\n\nUPN availability check:\n\n- `nadia.rahman@example.com`\n- Available: `true`\n- Held by account: `null`\n\nBirthright access for job profile `Software Engineer`:\n\n| Group | Privileged |\n|---|---:|\n| `All-Staff` | false |\n| `VPN-Users` | false |\n| `Eng-Git` | false |\n\nSegregation-of-duties check for those birthright groups:\n\n- Conflicts: none\n\n## Onboarding tasks\n\nFor worker `d1c51f86973082d609b4e5d2d9bc1d97`:\n\n| Task WID | Task | Status |\n|---|---|---|\n| `91fde85ce69bae29f652d00837b4000b` | Create accounts and email | Not Started |\n| `de26e655d3f21dcc2be88b4675fa6dd8` | Provision equipment | Not Started |\n\n## Finance\n\nFinance profile for Nadia Rahman:\n\n- Lookup returned `404`: `No finance profile for worker d1c51f86973082d609b4e5d2d9bc1d97`\n\nExpense reports for Nadia Rahman:\n\n- None returned.\n\nCost center mapping:\n\n- Workday cost center WID: `1e2feb89414c343c1027c4d1c386bbc4`\n- Finance cost center code: `CC-1000`\n\n## ITSM\n\nTickets for worker `d1c51f86973082d609b4e5d2d9bc1d97`:\n\n- None returned.\n\nNo equipment order ticket is currently on record.\n\n## Legal\n\nLegal hold status for worker `d1c51f86973082d609b4e5d2d9bc1d97`:\n\n- On hold: `false`\n- Matter: `null`\n\n## Manager record: Avery Carter\n\nWorkday worker:\n\n- Worker WID: `afbd67f9619699cfe1988ad9f06c144a`\n- Employee ID: `E1001`\n- Name: `Avery Carter`\n- Status: `Active`\n- Worker type: `Employee`\n- Job profile: `Engineering Manager`\n- Supervisory org:\n  - WID: `cd613e30d8f16adf91b7584a2265b1f5`\n  - Name: `Engineering`\n- Cost center:\n  - WID: `1e2feb89414c343c1027c4d1c386bbc4`\n  - Name: `CC-1000 Engineering`\n- Manager: `null`\n- Location: `Austin, TX`\n- Legal entity: `Example Corp US`\n- Hire date: `2023-03-01`\n- Termination date: `null`\n- Work email: `avery.carter@example.com`\n- Gov ID token: `gid-493c72fb23be`\n- Notes: empty\n\nManager identity account:\n\n- Account ID: `acct-37730edf`\n- UPN: `avery.carter@example.com`\n- Display name: `Avery Carter`\n- Linked worker WID: `afbd67f9619699cfe1988ad9f06c144a`\n- Employee type: `Employee`\n- Enabled: `true`\n- Active sessions: `1`\n- Groups:\n  - `All-Staff`\n  - `Eng-Git`\n  - `Eng-Prod-Deploy`\n  - `VPN-Users`\n- Licenses:\n  - `Office-E3`\n- Mailbox: `user`\n- Deleted: `false`\n\nManager finance profile:\n\n- Worker WID: `afbd67f9619699cfe1988ad9f06c144a`\n- Cost center code: `CC-1000`\n- Expense approver WID: `null`\n- Card active: `true`\n- Open expense reports: `0`\n- Final pay requested: `false`\n\nFinance approval delegations for Avery Carter:\n\n- Approver worker WID: `afbd67f9619699cfe1988ad9f06c144a`\n- Approves for:\n  - `1391f9b9dbc799b0121b28004e6f5a94`\n  - `21615022409a8a78909ff4976a8a43ef`\n  - `7eed8d14f06d3fef701966a0c381e88f`\n  - `b94067edfe175330a11d459a2f978d87`\n  - `e1ea24c4f9341c68966baea148beab13`\n\n## Facts that could affect downstream processing\n\n- The three hire events are duplicates for the same worker/correlation/effective date.\n- The worker is already `Active` in Workday as of `2026-11-02`.\n- Work email is still `null`.\n- No identity account currently exists for Nadia Rahman.\n- Candidate UPN `nadia.rahman@example.com` is available.\n- Birthright groups for `Software Engineer` are non-privileged and have no SoD conflicts.\n- Onboarding tasks are both `Not Started`.\n- No finance profile exists yet for the worker, although the Workday cost center maps to Finance code `CC-1000`.\n- No expense reports exist for the worker.\n- No ITSM tickets or equipment order tickets exist for the worker.\n- No legal hold exists.\n- No prior or related Workday record was found by name search; Workday fields do not indicate rehire or contractor conversion."
+  },
+  {
+   "role": "planner",
+   "tick": 22,
+   "stop": "end",
+   "tool_calls": 0,
+   "blocked": 0,
+   "final_text": "The three HIRE events are duplicates for the same effective-dated hire and should be handled as one onboarding case. Nadia Rahman is active today, has no prior worker/account match, and the candidate UPN is available. Proceed with normal new-hire onboarding: create identity/email, write email back to Workday, create finance profile, order equipment, and close onboarding tasks after verification.\n\n```json\n{\n  \"cases\": [\n    {\n      \"case_id\": \"case-deb0e066\",\n      \"summary\": \"Deduplicated hire onboarding for Nadia Rahman, worker WID d1c51f86973082d609b4e5d2d9bc1d97, employee ID E1023, effective 2026-11-02. Create new identity account/email, write email back to Workday, create finance profile for CC-1000 with manager Avery Carter as approver, order equipment, and complete onboarding tasks.\",\n      \"events\": [1, 2, 3]\n    }\n  ],\n  \"steps\": [\n    {\n      \"order\": 1,\n      \"system\": \"workday\",\n      \"action\": \"Preflight re-read current worker and onboarding task state for worker WID d1c51f86973082d609b4e5d2d9bc1d97. Confirm status is Active, work email is still null, job profile is Software Engineer, cost center WID is 1e2feb89414c343c1027c4d1c386bbc4, manager WID is afbd67f9619699cfe1988ad9f06c144a, task 91fde85ce69bae29f652d00837b4000b is Create accounts and email / Not Started, and task de26e655d3f21dcc2be88b4675fa6dd8 is Provision equipment / Not Started.\",\n      \"tools\": [\"wd_get_worker\", \"wd_get_onboarding_tasks\"],\n      \"case_id\": \"case-deb0e066\"\n    },\n    {\n      \"order\": 2,\n      \"system\": \"identity\",\n      \"action\": \"Preflight identity check before creation: search by worker WID d1c51f86973082d609b4e5d2d9bc1d97 and by name Nadia Rahman; confirm no existing account. Re-check UPN nadia.rahman@example.com is available. Re-read birthright groups for Software Engineer and re-run SoD check for All-Staff, VPN-Users, Eng-Git; proceed only if no conflicts and no privileged birthright group appears unexpectedly.\",\n      \"tools\": [\"idm_search_accounts\", \"idm_check_upn\", \"idm_get_birthright\", \"idm_check_sod\"],\n      \"case_id\": \"case-deb0e066\"\n    },\n    {\n      \"order\": 3,\n      \"system\": \"identity\",\n      \"action\": \"Create a new identity account for Nadia Rahman linked to Workday worker WID d1c51f86973082d609b4e5d2d9bc1d97, employee type Employee, display name Nadia Rahman, UPN nadia.rahman@example.com. Use idempotency key hire:case-deb0e066:d1c51f86973082d609b4e5d2d9bc1d97:create-account. If a retry sees a 409 or an existing account linked to this worker/UPN, do not create another account; use the existing returned account ID.\",\n      \"tools\": [\"idm_create_account\", \"idm_search_accounts\", \"idm_get_account\"],\n      \"case_id\": \"case-deb0e066\"\n    },\n    {\n      \"order\": 4,\n      \"system\": \"identity\",\n      \"action\": \"Using the account ID returned by idm_create_account or found by the idempotent search, provision/confirm a user mailbox for nadia.rahman@example.com, then add the non-privileged birthright groups All-Staff, VPN-Users, and Eng-Git. Verify the account is enabled, linked to worker WID d1c51f86973082d609b4e5d2d9bc1d97, has UPN nadia.rahman@example.com, has mailbox user, and contains groups All-Staff, VPN-Users, Eng-Git.\",\n      \"tools\": [\"idm_provision_mailbox\", \"idm_add_group\", \"idm_get_account\"],\n      \"case_id\": \"case-deb0e066\"\n    },\n    {\n      \"order\": 5,\n      \"system\": \"workday\",\n      \"action\": \"After identity account and mailbox are verified, write work email nadia.rahman@example.com back to Workday worker WID d1c51f86973082d609b4e5d2d9bc1d97. Use correlation_id case-deb0e066 if supported by the tool. Capture the returned Workday business process event_id.\",\n      \"tools\": [\"wd_update_work_email\"],\n      \"case_id\": \"case-deb0e066\"\n    },\n    {\n      \"order\": 6,\n      \"system\": \"workday\",\n      \"action\": \"Poll the Workday business process event_id from the wd_update_work_email response until it is Successfully Completed, waiting between polls if needed. Then re-read worker WID d1c51f86973082d609b4e5d2d9bc1d97 and confirm work_email is nadia.rahman@example.com.\",\n      \"tools\": [\"wd_get_business_process\", \"sys_wait\", \"wd_get_worker\"],\n      \"case_id\": \"case-deb0e066\"\n    },\n    {\n      \"order\": 7,\n      \"system\": \"workday\",\n      \"action\": \"Mark onboarding task 91fde85ce69bae29f652d00837b4000b, Create accounts and email, Complete only after the identity account exists and Workday work_email is confirmed as nadia.rahman@example.com.\",\n      \"tools\": [\"wd_update_onboarding_task\", \"wd_get_onboarding_tasks\"],\n      \"case_id\": \"case-deb0e066\"\n    },\n    {\n      \"order\": 8,\n      \"system\": \"finance\",\n      \"action\": \"Preflight finance state: map Workday cost center WID 1e2feb89414c343c1027c4d1c386bbc4 and confirm it maps to CC-1000; check finance profile for worker WID d1c51f86973082d609b4e5d2d9bc1d97. If no profile exists, create the finance profile for worker WID d1c51f86973082d609b4e5d2d9bc1d97 with cost center code CC-1000 and expense approver worker WID afbd67f9619699cfe1988ad9f06c144a. Use idempotency key hire:case-deb0e066:d1c51f86973082d609b4e5d2d9bc1d97:create-finance-profile.\",\n      \"tools\": [\"fin_map_cost_center\", \"fin_get_profile\", \"fin_create_profile\"],\n      \"case_id\": \"case-deb0e066\"\n    },\n    {\n      \"order\": 9,\n      \"system\": \"finance\",\n      \"action\": \"Verify the finance profile now exists for worker WID d1c51f86973082d609b4e5d2d9bc1d97 with cost center code CC-1000 and expense approver worker WID afbd67f9619699cfe1988ad9f06c144a. No expense-report closure, final pay, card deactivation, or rerouting is needed for this hire.\",\n      \"tools\": [\"fin_get_profile\"],\n      \"case_id\": \"case-deb0e066\"\n    },\n    {\n      \"order\": 10,\n      \"system\": \"itsm\",\n      \"action\": \"Preflight ITSM tickets for worker WID d1c51f86973082d609b4e5d2d9bc1d97. If no equipment_order ticket exists, order the standard laptop and equipment bundle for Nadia Rahman at Austin, TX. Use idempotency key hire:case-deb0e066:d1c51f86973082d609b4e5d2d9bc1d97:order-equipment. Capture the resulting equipment_order ticket ID.\",\n      \"tools\": [\"itsm_get_tickets\", \"itsm_order_equipment\"],\n      \"case_id\": \"case-deb0e066\"\n    },\n    {\n      \"order\": 11,\n      \"system\": \"itsm\",\n      \"action\": \"Verify an equipment_order ticket is on record for worker WID d1c51f86973082d609b4e5d2d9bc1d97. Physical delivery is tracked in ITSM and is not required before closing the Workday Provision equipment onboarding task.\",\n      \"tools\": [\"itsm_get_tickets\"],\n      \"case_id\": \"case-deb0e066\"\n    },\n    {\n      \"order\": 12,\n      \"system\": \"workday\",\n      \"action\": \"After ITSM confirms an equipment_order ticket exists, mark onboarding task de26e655d3f21dcc2be88b4675fa6dd8, Provision equipment, Complete. Then re-read onboarding tasks and confirm both 91fde85ce69bae29f652d00837b4000b and de26e655d3f21dcc2be88b4675fa6dd8 are Complete.\",\n      \"tools\": [\"wd_update_onboarding_task\", \"wd_get_onboarding_tasks\"],\n      \"case_id\": \"case-deb0e066\"\n    },\n    {\n      \"order\": 13,\n      \"system\": \"workday\",\n      \"action\": \"Final Workday/event check: read worker WID d1c51f86973082d609b4e5d2d9bc1d97 and events greater than seq 3. Treat the expected WORKER_CONTACT_CHANGED event from writing nadia.rahman@example.com as part of this case; if unrelated new events appear, leave them for a separate planning cycle.\",\n      \"tools\": [\"wd_get_worker\", \"wd_get_events\"],\n      \"case_id\": \"case-deb0e066\"\n    }\n  ],\n  \"escalations\": []\n}\n```"
+  },
+  {
+   "role": "critic",
+   "tick": 26,
+   "stop": "end",
+   "tool_calls": 4,
+   "blocked": 0,
+   "final_text": "The proposed plan is sound. It correctly deduplicates the three identical hire events, respects the effective date/current active status, verifies current state before writes, provisions only non-privileged birthright access after SoD checks, writes the email back to Workday before completing the account/email onboarding task, creates the finance profile with the mapped cost center and manager approver, orders equipment before completing the equipment task, and includes appropriate verification steps.\n\nI rechecked current state: worker is still Active, work email is still null, onboarding tasks are still Not Started, and no new events after seq 3 are present. No blocking issues found.\n\n```json\n{\"verdict\":\"approve\",\"issues\":[]}\n```"
+  },
+  {
+   "role": "executor_workday",
+   "tick": 28,
+   "stop": "end",
+   "tool_calls": 2,
+   "blocked": 0,
+   "final_text": "Preflight completed for case `case-deb0e066`.\n\nConfirmed Workday worker state:\n- Worker WID: `d1c51f86973082d609b4e5d2d9bc1d97`\n- Employee ID: `E1023`\n- Name: Nadia Rahman\n- Status: `Active`\n- Work email: `null`\n- Job profile: `Software Engineer`\n- Cost center WID: `1e2feb89414c343c1027c4d1c386bbc4`\n- Manager WID: `afbd67f9619699cfe1988ad9f06c144a`\n\nConfirmed onboarding tasks:\n- Task WID `91fde85ce69bae29f652d00837b4000b`: `Create accounts and email` \u2014 `Not Started`\n- Task WID `de26e655d3f21dcc2be88b4675fa6dd8`: `Provision equipment` \u2014 `Not Started`\n\nNo discrepancies found."
+  },
+  {
+   "role": "executor_identity",
+   "tick": 40,
+   "stop": "end",
+   "tool_calls": 12,
+   "blocked": 0,
+   "final_text": "Identity work completed for `case-deb0e066`.\n\nCompleted:\n- Preflighted identity state:\n  - No existing account found by worker WID `d1c51f86973082d609b4e5d2d9bc1d97`\n  - No existing account found by name `Nadia Rahman`\n  - UPN `nadia.rahman@example.com` was available\n  - Birthright groups for `Software Engineer` confirmed as non-privileged:\n    - `All-Staff`\n    - `VPN-Users`\n    - `Eng-Git`\n  - SoD check returned no conflicts\n- Created identity account:\n  - Account ID: `acct-f9495568`\n  - Worker WID: `d1c51f86973082d609b4e5d2d9bc1d97`\n  - UPN: `nadia.rahman@example.com`\n  - Display name: `Nadia Rahman`\n  - Employee type: `Employee`\n  - Enabled: `true`\n  - Idempotency key used: `hire:case-deb0e066:d1c51f86973082d609b4e5d2d9bc1d97:create-account`\n- Mailbox:\n  - Confirmed active user mailbox already present; provisioning returned expected 409 because mailbox already existed.\n- Added birthright groups:\n  - `All-Staff`\n  - `VPN-Users`\n  - `Eng-Git`\n\nFinal verification:\n- Account `acct-f9495568` is enabled\n- Linked to worker WID `d1c51f86973082d609b4e5d2d9bc1d97`\n- UPN is `nadia.rahman@example.com`\n- Mailbox is `user`\n- Groups contain `All-Staff`, `VPN-Users`, and `Eng-Git`\n\nUnresolved:\n- None for identity."
+  },
+  {
+   "role": "executor_workday",
+   "tick": 50,
+   "stop": "end",
+   "tool_calls": 9,
+   "blocked": 0,
+   "final_text": "Workday steps completed for case `case-deb0e066`.\n\nCompleted:\n- Verified worker `d1c51f86973082d609b4e5d2d9bc1d97` / employee `E1023` was active and had no work email.\n- Wrote work email `nadia.rahman@example.com` back to Workday.\n  - Idempotency key: `hire:case-deb0e066:d1c51f86973082d609b4e5d2d9bc1d97:update-work-email`\n  - Correlation ID: `case-deb0e066`\n  - Workday business process event ID: `82458cc89f7a7dafb43adc4fc7af3626`\n- Polled business process event `82458cc89f7a7dafb43adc4fc7af3626` until status was `Successfully Completed`.\n- Re-read worker and confirmed `work_email` is `nadia.rahman@example.com`.\n- Verified onboarding tasks and marked:\n  - Task WID `91fde85ce69bae29f652d00837b4000b` \u2014 `Create accounts and email` \u2014 `Complete`\n\nStill open:\n- Task WID `de26e655d3f21dcc2be88b4675fa6dd8` \u2014 `Provision equipment` remains `Not Started` and was not part of my assigned Workday steps."
+  },
+  {
+   "role": "executor_finance",
+   "tick": 54,
+   "stop": "end",
+   "tool_calls": 4,
+   "blocked": 0,
+   "final_text": "Finance steps completed for `case-deb0e066`.\n\nCompleted:\n- Mapped Workday cost center WID `1e2feb89414c343c1027c4d1c386bbc4` to Finance cost center `CC-1000`.\n- Checked finance profile for worker WID `d1c51f86973082d609b4e5d2d9bc1d97`; none existed.\n- Created finance profile using idempotency key:\n  - `hire:case-deb0e066:d1c51f86973082d609b4e5d2d9bc1d97:create-finance-profile`\n- Verified finance profile now exists:\n  - Worker WID: `d1c51f86973082d609b4e5d2d9bc1d97`\n  - Cost center: `CC-1000`\n  - Expense approver WID: `afbd67f9619699cfe1988ad9f06c144a`\n  - Corporate card active: `false`\n  - Open expense reports: `0`\n  - Final pay requested: `false`\n\nNo expense report closure, final pay, card deactivation, or rerouting was needed for this hire.\n\nUnresolved:\n- None for finance."
+  },
+  {
+   "role": "executor_itsm",
+   "tick": 57,
+   "stop": "end",
+   "tool_calls": 3,
+   "blocked": 0,
+   "final_text": "ITSM steps completed for `case-deb0e066`.\n\nCompleted:\n- Preflighted ITSM tickets for worker WID `d1c51f86973082d609b4e5d2d9bc1d97`; no existing tickets were on record.\n- Ordered the standard laptop and equipment bundle.\n  - Ticket ID: `tkt-0994940e`\n  - Type: `equipment_order`\n  - Status: `Open`\n  - Bundle: `standard`\n  - Idempotency key: `hire:case-deb0e066:d1c51f86973082d609b4e5d2d9bc1d97:order-equipment`\n- Verified an `equipment_order` ticket is now on record for the worker.\n\nUnresolved:\n- None for ITSM. Physical delivery remains tracked in ITSM and is not required for this step."
+  },
+  {
+   "role": "executor_workday",
+   "tick": 61,
+   "stop": "end",
+   "tool_calls": 4,
+   "blocked": 0,
+   "final_text": "Workday steps completed for `case-deb0e066`.\n\nCompleted:\n- Marked onboarding task `de26e655d3f21dcc2be88b4675fa6dd8` \u2014 `Provision equipment` \u2014 `Complete`.\n- Re-read onboarding tasks for worker `d1c51f86973082d609b4e5d2d9bc1d97` and confirmed:\n  - `91fde85ce69bae29f652d00837b4000b` \u2014 `Create accounts and email` \u2014 `Complete`\n  - `de26e655d3f21dcc2be88b4675fa6dd8` \u2014 `Provision equipment` \u2014 `Complete`\n- Final worker check confirmed:\n  - Worker: Nadia Rahman / `E1023`\n  - WID: `d1c51f86973082d609b4e5d2d9bc1d97`\n  - Status: `Active`\n  - Work email: `nadia.rahman@example.com`\n  - Job profile: `Software Engineer`\n  - Manager WID: `afbd67f9619699cfe1988ad9f06c144a`\n  - Cost center WID: `1e2feb89414c343c1027c4d1c386bbc4`\n- Final event check for events greater than seq `3` found only the expected case event:\n  - Seq `4`: `WORKER_CONTACT_CHANGED`\n  - Correlation ID: `case-deb0e066`\n  - Event ID: `82458cc89f7a7dafb43adc4fc7af3626`\n\nUnresolved:\n- None."
+  },
+  {
+   "role": "reconciler",
+   "tick": 74,
+   "stop": "end",
+   "tool_calls": 13,
+   "blocked": 0,
+   "final_text": "Reconciliation completed for duplicated HIRE events seq 1\u20133 / case `case-deb0e066` affecting worker `d1c51f86973082d609b4e5d2d9bc1d97` / `E1023` Nadia Rahman.\n\nChecks performed:\n- Workday worker is `Active`, employee type is Employee, hire date is `2026-11-02`, manager is `afbd67f9619699cfe1988ad9f06c144a`, cost center WID is `1e2feb89414c343c1027c4d1c386bbc4`, and work email is `nadia.rahman@example.com`.\n- Workday onboarding tasks are both complete:\n  - `91fde85ce69bae29f652d00837b4000b` \u2014 Create accounts and email\n  - `de26e655d3f21dcc2be88b4675fa6dd8` \u2014 Provision equipment\n- Workday contact-change BP `82458cc89f7a7dafb43adc4fc7af3626` completed successfully.\n- Identity account `acct-f9495568` exists, is enabled, linked to the correct worker WID, has UPN `nadia.rahman@example.com`, mailbox `user`, and non-deleted state.\n- Identity groups match Software Engineer birthright access: `All-Staff`, `VPN-Users`, `Eng-Git`; SoD check has no conflicts.\n- Finance profile exists with cost center `CC-1000`, matching Workday cost center mapping, and expense approver matches current manager `afbd67f9619699cfe1988ad9f06c144a`.\n- No open expense reports exist.\n- ITSM has equipment order ticket `tkt-0994940e` for standard bundle, status `Open`, which is consistent because physical delivery remains tracked in ITSM.\n- Legal hold check shows no hold.\n- Event feed after seq 3 contains only the expected Workday contact-change event for this case.\n\n```json\n{\"consistent\":true,\"discrepancies\":[]}\n```"
+  }
+ ]
+}

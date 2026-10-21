@@ -1,0 +1,453 @@
+{
+ "record": {
+  "strategy": "fixed_flow",
+  "model": "none",
+  "scenario": "TE-4",
+  "split": "novel",
+  "cascade": "termination",
+  "seed": 2,
+  "repeat": 0,
+  "success": false,
+  "violations": [
+   "missing_identity",
+   "identity_not_carried_over"
+  ],
+  "unsafe": [],
+  "failed_expectations": [
+   "expected exactly one identity, found 0",
+   "account still marked as contingent"
+  ],
+  "human_touches": 1,
+  "effort": {
+   "escalations": 1,
+   "fix_requests": 0,
+   "fix_requests_declined": 0,
+   "human_touches": 1
+  },
+  "tool_calls": 31,
+  "failed_tool_calls": 1,
+  "blocked_by_gate": 0,
+  "access_interruptions": 0,
+  "termination_exposure_hours": [
+   0.0
+  ],
+  "minutes_to_finish": 91,
+  "wall_seconds": 0.0,
+  "usage": {
+   "calls": 0,
+   "input_tokens": 0,
+   "output_tokens": 0,
+   "cache_read_tokens": 0,
+   "cache_write_tokens": 0,
+   "refusals": 0,
+   "fallbacks": 0
+  },
+  "cost_usd": null,
+  "llm_runs": {},
+  "step_limits": 0,
+  "notes": [],
+  "error": null
+ },
+ "audit": [
+  {
+   "tick": 1,
+   "actor": "fixed_flow",
+   "tool": "wd_get_events",
+   "tier": "T0",
+   "args": {
+    "since_seq": 0
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 2,
+   "actor": "fixed_flow",
+   "tool": "idm_search_accounts",
+   "tier": "T0",
+   "args": {
+    "query": "3da95cd2167b75dfb948f82a8317cba0"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 3,
+   "actor": "fixed_flow",
+   "tool": "idm_disable_account",
+   "tier": "T2",
+   "args": {
+    "account_id": "acct-1a16daff"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 4,
+   "actor": "fixed_flow",
+   "tool": "idm_revoke_sessions",
+   "tier": "T2",
+   "args": {
+    "account_id": "acct-1a16daff"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 5,
+   "actor": "fixed_flow",
+   "tool": "idm_remove_group",
+   "tier": "T1",
+   "args": {
+    "account_id": "acct-1a16daff",
+    "group": "All-Staff"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 6,
+   "actor": "fixed_flow",
+   "tool": "idm_remove_group",
+   "tier": "T1",
+   "args": {
+    "account_id": "acct-1a16daff",
+    "group": "Eng-Git"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 7,
+   "actor": "fixed_flow",
+   "tool": "idm_remove_group",
+   "tier": "T1",
+   "args": {
+    "account_id": "acct-1a16daff",
+    "group": "VPN-Users"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 8,
+   "actor": "fixed_flow",
+   "tool": "idm_remove_licenses",
+   "tier": "T2",
+   "args": {
+    "account_id": "acct-1a16daff"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 9,
+   "actor": "fixed_flow",
+   "tool": "idm_set_mailbox",
+   "tier": "T2",
+   "args": {
+    "account_id": "acct-1a16daff",
+    "mode": "shared"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 10,
+   "actor": "fixed_flow",
+   "tool": "fin_get_profile",
+   "tier": "T0",
+   "args": {
+    "worker_wid": "3da95cd2167b75dfb948f82a8317cba0"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 11,
+   "actor": "fixed_flow",
+   "tool": "fin_close_expense_reports",
+   "tier": "T2",
+   "args": {
+    "worker_wid": "3da95cd2167b75dfb948f82a8317cba0"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 12,
+   "actor": "fixed_flow",
+   "tool": "fin_request_final_pay",
+   "tier": "T3",
+   "args": {
+    "worker_wid": "3da95cd2167b75dfb948f82a8317cba0"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 13,
+   "actor": "fixed_flow",
+   "tool": "itsm_create_asset_recovery",
+   "tier": "T1",
+   "args": {
+    "worker_wid": "3da95cd2167b75dfb948f82a8317cba0",
+    "idempotency_key": "case-82f1c080-asset"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 14,
+   "actor": "fixed_flow",
+   "tool": "wd_get_events",
+   "tier": "T0",
+   "args": {
+    "since_seq": 1
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 30,
+   "actor": "fixed_flow",
+   "tool": "sys_wait",
+   "tier": "T0",
+   "args": {
+    "minutes": 15
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 31,
+   "actor": "fixed_flow",
+   "tool": "wd_get_events",
+   "tier": "T0",
+   "args": {
+    "since_seq": 1
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 32,
+   "actor": "fixed_flow",
+   "tool": "wd_get_worker",
+   "tier": "T0",
+   "args": {
+    "worker": "0d1db84897623f4094c16aad0575665b"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 33,
+   "actor": "fixed_flow",
+   "tool": "idm_create_account",
+   "tier": "T1",
+   "args": {
+    "worker_wid": "0d1db84897623f4094c16aad0575665b",
+    "upn": "kofi.silva@example.com",
+    "display_name": "Kofi Silva",
+    "idempotency_key": "case-a9cd8311-account",
+    "employee_type": "Employee"
+   },
+   "ok": false,
+   "fault": null,
+   "error": "UPN kofi.silva@example.com is already in use"
+  },
+  {
+   "tick": 34,
+   "actor": "fixed_flow",
+   "tool": "hitl_escalate",
+   "tier": "T0",
+   "args": {
+    "case_id": "case-a9cd8311",
+    "reason": "idm_create_account failed: UPN kofi.silva@example.com is already in use",
+    "proposed_action": "Investigate and complete idm_create_account manually"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 35,
+   "actor": "fixed_flow",
+   "tool": "fin_map_cost_center",
+   "tier": "T0",
+   "args": {
+    "workday_cost_center_wid": "5c6e433715ba2bdd177219d30e7a269f"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 36,
+   "actor": "fixed_flow",
+   "tool": "fin_create_profile",
+   "tier": "T1",
+   "args": {
+    "worker_wid": "0d1db84897623f4094c16aad0575665b",
+    "cost_center_code": "CC-1000",
+    "approver_worker_wid": "5186ee32ee8d7ee9770348a05d300cb9",
+    "idempotency_key": "case-a9cd8311-fin"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 37,
+   "actor": "fixed_flow",
+   "tool": "itsm_order_equipment",
+   "tier": "T1",
+   "args": {
+    "worker_wid": "0d1db84897623f4094c16aad0575665b",
+    "bundle": "engineering",
+    "idempotency_key": "case-a9cd8311-eq"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 38,
+   "actor": "fixed_flow",
+   "tool": "wd_get_onboarding_tasks",
+   "tier": "T0",
+   "args": {
+    "worker": "0d1db84897623f4094c16aad0575665b"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 39,
+   "actor": "fixed_flow",
+   "tool": "wd_update_onboarding_task",
+   "tier": "T1",
+   "args": {
+    "task_wid": "866aa110edcb1f9a6b031f3de1a5dbb0",
+    "status": "Complete"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 40,
+   "actor": "fixed_flow",
+   "tool": "wd_update_onboarding_task",
+   "tier": "T1",
+   "args": {
+    "task_wid": "18026938ebad83042e64c3e094d2c3a6",
+    "status": "Complete"
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 41,
+   "actor": "fixed_flow",
+   "tool": "wd_get_events",
+   "tier": "T0",
+   "args": {
+    "since_seq": 2
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 57,
+   "actor": "fixed_flow",
+   "tool": "sys_wait",
+   "tier": "T0",
+   "args": {
+    "minutes": 15
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 58,
+   "actor": "fixed_flow",
+   "tool": "wd_get_events",
+   "tier": "T0",
+   "args": {
+    "since_seq": 2
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 74,
+   "actor": "fixed_flow",
+   "tool": "sys_wait",
+   "tier": "T0",
+   "args": {
+    "minutes": 15
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 75,
+   "actor": "fixed_flow",
+   "tool": "wd_get_events",
+   "tier": "T0",
+   "args": {
+    "since_seq": 2
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  },
+  {
+   "tick": 91,
+   "actor": "fixed_flow",
+   "tool": "sys_wait",
+   "tier": "T0",
+   "args": {
+    "minutes": 15
+   },
+   "ok": true,
+   "fault": null,
+   "error": null
+  }
+ ],
+ "escalations": [
+  {
+   "tick": 34,
+   "case_id": "case-a9cd8311",
+   "reason": "idm_create_account failed: UPN kofi.silva@example.com is already in use",
+   "proposed_action": "Investigate and complete idm_create_account manually"
+  }
+ ],
+ "fix_requests": [],
+ "agents": []
+}
